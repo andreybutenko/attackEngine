@@ -1,0 +1,39 @@
+# attackEngine v0.1.0
+
+This is the base for a simple battle game written in Python. Works in 2.7.3, at the very least. It's easy to change things, but it requires a bit of documentation.
+
+# How to run
+
+Just execute the "execute.py" file!
+
+# Attacks
+
+You can change what attacks the player starts with by putting one attack on each line in the character/attacks.txt file.
+You can change what attacks the enemies have by going into the eneTYPES folder and changing the attacks on each line in the files.
+The attacks on each line of these files correspond to one in the plays folder, and you can assign the player or the enemy an attack by putting a file name in the plays folder in a new line their attack file. *DO NOT* include "plays/" or ".txt" when assigning an attack to a character.
+
+# Attack markup
+
+You can modify existing attacks or make your own by modifying .txt files in the plays folder.
+As a general guideline, "PLAYER" in all caps must be the first line in every file. This isn't necassarily required for all kinds of attacks, but is necassary for a feature that is unimplemented.
+To do damage, put, for example "-3" on its own line to do 3 damage to the enemy. Put "3" on its own line if you want to heal the enemy.
+A line in the form "RANDOM1|10" will generate a number between and including the numbers 1 and 10. Similar for RANDOM20|12, and so on.
+Putting "genRANDOM" anywhere will use the most recently generated random number. For example, "-genRANDOM" will do the random amount of damage generated to the enemy, and "genRANDOM" will heal them instead.
+"SWITCH3" will change the person's attack list to the file "eneTYPES/3.txt". This is called a polymorph.
+
+# Characteristics
+
+Some things aren't made to be as easily configurable as of now.
+Player health can be adjusted by changing the plyHEAL variable on line 10 in the execute.py file.
+Enemy names can be changed by editing the eneNAME array on line 7 in execute.py.
+Enemy genders can be changed by changing the eneGEND array on line 8 of execute.py. This is just to make statements gender-correct, but can be used to refer to an object as "it," as well as just "he" or "she."
+Enemy health can be adjusted by altering the eneHEAL array on line 5 of execute.py
+The list of attacks enemies have can be changed in the eneTYPE array on line 6 of the _exact same file I repeated over and over again._ For example, just 1 would use the attack list in plays/1.txt
+
+# Future
+
+At some point I'll set up some wiki pages better explaining individual files, and detailing default attacks, and probably clean up and comment my code. You can help fix stuff if you'd like. Main things to be done:
+
+- Make player health and enemy health modifyable outside of the source code, in a .txt file preferably.
+- Make enemy names and genders modifyable outside of the source code.
+- Make enemy types easily modifyable outside of the source code.
